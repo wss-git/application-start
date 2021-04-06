@@ -1,0 +1,19 @@
+Test:
+  Component: web-framework
+  Provider: alibaba
+  Extends:
+    deploy:
+      - Hook: npm install --production
+        Path: ./code
+        Pre: true
+  Properties:
+    framework: express
+    region: cn-shenzhen
+    service:
+      name: app-express
+    function:
+      customContainerConfig:
+        image: registry.cn-shenzhen.aliyuncs.com/test-wss/nodejs14:v0.2
+        command: '["node", "index.js"]'
+      code:
+        src: ./code

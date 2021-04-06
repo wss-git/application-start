@@ -1,0 +1,28 @@
+LogsApp:
+  Component: web-framework
+  Provider: alibaba
+  Extends:
+    deploy:
+      - Hook: pip3 install -t ./tmp -r requirements.txt
+        Path: .
+        Pre: true
+  Properties:
+    region: cn-shenzhen
+    service: 
+      name: django
+      description: django示例
+    function:
+      name: test
+      description: django示例
+      memorySize: 1024
+      code:
+        src: .
+        excludes:
+          - s.yml
+          - README.md
+      customContainerConfig:
+        image: registry.cn-shenzhen.aliyuncs.com/test-wss/python3:v0.3
+        command: '["python3"]'
+        args: '["manage.py","runserver","0.0.0.0:9000"]'
+      environmentVariables:
+        PYTHONPATH: $PATH:/mnt/auto:/mnt/auto/tmp

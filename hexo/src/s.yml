@@ -1,0 +1,22 @@
+Test:
+  Component: web-framework
+  Provider: alibaba
+  Extends:
+    deploy:
+      - Hook: npm install --production
+        Path: .
+        Pre: true
+      - Hook: npm run build
+        Path: .
+        Pre: true
+  Properties:
+    framework: hexo
+    region: cn-shenzhen
+    service:
+      name: app-hexo
+    function:
+      customContainerConfig:
+        image: registry.cn-shenzhen.aliyuncs.com/test-wss/nodejs14:v0.2
+        args: '["npm", "run","server"]'
+      code:
+        src: .
