@@ -1,6 +1,7 @@
 Test:
   Component: web-framework
   Provider: alibaba
+  Access: wss
   Extends:
     deploy:
       - Hook: npm install --production

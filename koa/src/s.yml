@@ -7,17 +7,14 @@ Test:
       - Hook: npm install --production
         Path: .
         Pre: true
-      - Hook: npm run build
-        Path: .
-        Pre: true
   Properties:
-    framework: hexo
+    framework: koa
     region: cn-shenzhen
     service:
-      name: app-hexo
+      name: app-koa
     function:
       customContainerConfig:
-        image: registry.cn-shenzhen.aliyuncs.com/test-wss/nodejs12
-        args: '["npm", "run","server"]'
+        image: registry.cn-shenzhen.aliyuncs.com/test-wss/nodejs14:v0.2
+        command: '["node", "index.js"]'
       code:
         src: .

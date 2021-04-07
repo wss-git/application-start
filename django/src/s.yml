@@ -1,11 +1,12 @@
 LogsApp:
   Component: web-framework
   Provider: alibaba
-  Extends:
-    deploy:
-      - Hook: pip3 install -t ./tmp -r requirements.txt
-        Path: .
-        Pre: true
+  Access: wss
+  # Extends:
+  #   deploy:
+  #     - Hook: pip3 install -t ./tmp -r requirements.txt
+  #       Path: .
+  #       Pre: true
   Properties:
     region: cn-shenzhen
     service: 
@@ -25,4 +26,4 @@ LogsApp:
         command: '["python3"]'
         args: '["manage.py","runserver","0.0.0.0:9000"]'
       environmentVariables:
-        PYTHONPATH: $PATH:/mnt/auto:/mnt/auto/tmp
+        PYTHONPATH: $PATH:/mnt/auto:/mnt/auto/tmp:/
