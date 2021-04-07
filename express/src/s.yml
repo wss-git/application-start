@@ -14,7 +14,7 @@ Test:
       name: app-express
     function:
       customContainerConfig:
-        image: registry.cn-shenzhen.aliyuncs.com/test-wss/nodejs14:v0.2
+        image: registry.cn-shenzhen.aliyuncs.com/test-wss/nodejs12:v0.1
         command: '["node", "index.js"]'
       code:
         src: ./code

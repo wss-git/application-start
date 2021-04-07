@@ -2,7 +2,7 @@ Type: Application
 Name: start-express
 Provider:
   - Alibaba
-Version: 0.0.2
+Version: 0.0.4
 Description: 
   zh: egg
   en: egg

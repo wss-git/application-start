@@ -2,12 +2,13 @@ LogsApp:
   Component: web-framework
   Provider: alibaba
   Access: wss # 需要写成自己的密钥别名
-  # Extends:
-  #   deploy:
-  #     - Hook: pip3 install -t ./tmp -r requirements.txt
-  #       Path: ./code
-  #       Pre: true
+  Extends:
+    deploy:
+      - Hook: pip3 install -t ./tmp -r requirements.txt
+        Path: ./code
+        Pre: true
   Properties:
+    framework: django
     region: cn-shenzhen
     service: 
       name: start-django

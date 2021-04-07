@@ -5,7 +5,7 @@ Test:
   Extends:
     deploy:
       - Hook: npm install --production
-        Path: .
+        Path: ./code
         Pre: true
   Properties:
     framework: koa
@@ -14,7 +14,7 @@ Test:
       name: app-koa
     function:
       customContainerConfig:
-        image: registry.cn-shenzhen.aliyuncs.com/test-wss/nodejs14:v0.2
+        image: registry.cn-shenzhen.aliyuncs.com/test-wss/nodejs12:v0.1
         command: '["node", "index.js"]'
       code:
-        src: .
+        src: ./code

@@ -5,10 +5,10 @@ Test:
   Extends:
     deploy:
       - Hook: npm install --production
-        Path: .
+        Path: ./code
         Pre: true
       - Hook: npm run build
-        Path: .
+        Path: ./code
         Pre: true
   Properties:
     framework: hexo
@@ -17,7 +17,7 @@ Test:
       name: app-hexo
     function:
       customContainerConfig:
-        image: registry.cn-shenzhen.aliyuncs.com/test-wss/nodejs12
+        image: registry.cn-shenzhen.aliyuncs.com/test-wss/nodejs12:v0.1
         args: '["npm", "run","server"]'
       code:
-        src: .
+        src: ./code

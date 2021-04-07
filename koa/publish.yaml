@@ -1,11 +1,11 @@
 Type: Application
-Name: start-hexo
+Name: start-koa
 Provider:
   - Alibaba
-Version: 0.0.2
+Version: 0.0.1
 Description: 
-  zh: hexo
-  en: hexo
+  zh: koa
+  en: koa
 HomePage: https://github.com/Serverless-Devs/docs/blob/master/zh/dev.md#%E5%88%9D%E5%A7%8B%E5%8C%96Package
 Tags: #标签详情
   - zh: 部署函数

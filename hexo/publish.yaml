@@ -2,7 +2,7 @@ Type: Application
 Name: start-hexo
 Provider:
   - Alibaba
-Version: 0.0.3
+Version: 0.0.5
 Description: 
   zh: hexo
   en: hexo
